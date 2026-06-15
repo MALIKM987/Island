@@ -36,17 +36,7 @@ Przyklad:
 
 3. Sposob uruchomienia
 
-Z katalogu island_project:
-
-python main.py input.txt
-
-Jesli plik nie zostanie podany, program sprobuje wczytac input.txt:
-
-python main.py
-
-Tryb GUI:
-
-python main.py input.txt --gui
+W folderze dist znajduje się plik wykonywalny dla wersji graficznej.
 
 Przykladowe testy:
 
@@ -56,13 +46,7 @@ python main.py tests/split_by_channel.txt
 python main.py tests/internal_valley.txt
 python main.py tests/large_island_20x20.txt
 
-4. Przyklad dzialania
-
-Dla pliku input.txt wynik powinien byc:
-
-Minimalny wzrost poziomu morza: 4 stopy
-
-5. Opis algorytmu
+4. Opis algorytmu
 
 Program sprawdza kolejne poziomy morza od 0 do maksymalnej wysokosci na mapie.
 Dla kazdego poziomu wykonywane sa dwa glowne kroki:
@@ -83,7 +67,7 @@ Wewnetrzne doliny nie sa zalewane automatycznie. Nawet jesli maja wysokosc
 mniejsza lub rowna poziomowi morza, pozostaja suche, dopoki nie maja polaczenia
 z morzem od brzegu mapy.
 
-6. Opis plikow
+5. Opis plikow
 
 main.py:
 - obsluga argumentow programu,
@@ -109,12 +93,9 @@ tests:
 - split_by_channel.txt: przypadek z niskim pasem, wynik 1,
 - internal_valley.txt: zamknieta dolina, ktora nie powinna byc zalana wczesniej,
 - large_island_20x20.txt: mapa 20x20, oczekiwany wynik 4.
+- inne ...
 
-maps:
-- dodatkowe mapy wysp do recznego wczytywania i testowania GUI,
-- opis map i oczekiwane wyniki sa w pliku maps/README_maps.txt.
-
-7. GUI
+6. GUI
 
 GUI pokazuje wyspe jako siatke kwadratow. W kazdym polu widoczna jest wysokosc.
 
@@ -132,7 +113,7 @@ Dostepne przyciski:
 - Stop animacji,
 - Reset.
 
-8. Obsluga bledow
+7. Obsluga bledow
 
 Program wypisuje czytelne komunikaty dla:
 - braku pliku wejsciowego,
@@ -142,12 +123,12 @@ Program wypisuje czytelne komunikaty dla:
 - wartosci niebedacych liczbami calkowitymi,
 - ujemnego lub zerowego n.
 
-9. Biblioteki
+8. Biblioteki
 
 Program korzysta wylacznie ze standardowej biblioteki Pythona. GUI uzywa
 modulu Tkinter, ktory jest czescia standardowej biblioteki.
 
-10. Tworzenie pliku .exe w Windows 11
+9. Tworzenie pliku .exe w Windows 11
 
 Mozna uzyc programu PyInstaller:
 
@@ -158,7 +139,7 @@ Po zakonczeniu budowania plik wykonywalny powinien znajdowac sie tutaj:
 
 dist/main.exe
 
-Jesli program ma dzialac jak zwykla aplikacja okienkowa po dwukliku, bez okna
+Jesli program ma dziala jak zwykla aplikacja okienkowa po dwukliku, bez okna
 konsoli, nalezy zbudowac plik app.py:
 
 pyinstaller --onefile --windowed --name ZalewanieWyspy app.py
@@ -170,12 +151,3 @@ dist/ZalewanieWyspy.exe
 Po uruchomieniu aplikacja od razu otworzy GUI. Pliki map mozna wczytywac
 przyciskiem Wczytaj plik.
 
-11. Co oddac na UPeL
-
-Do oddania na UPeL nalezy przekazac:
-- kod zrodlowy,
-- plik .exe,
-- pliki wejsciowe,
-- instrukcje obslugi,
-- ewentualne pliki .dll, jesli beda wymagane,
-- informacje o wersji Pythona i sposobie wygenerowania pliku .exe.
